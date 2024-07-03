@@ -10,7 +10,7 @@ $(function() {
   let cityIds = [];
   let filters_dict = {};
   const amenity_checkbox = $(".amenities .popover ul li input");
-  const state_checkbox = $(".locations .popover .state input");
+  const state_checkbox = $(".locations .popover .state input.state");
   const city_checkbox = $(".locations .popover .city input");
 
   console.log('amenity_check: ', amenity_checkbox);
@@ -99,9 +99,9 @@ $(function() {
       }
       filters_dict.cities = cityIds;
 
-      console.log('state_cities: ', states, cities); 
-      if (JSON.stringify(cities_dict) !== '{}' || JSON.stringify(states_dict) !== '{}') {
-        h4.text(states, cities);
+      console.log('state_cities: ', states, cities);
+      if (JSON.stringify(states_dict) !== '{}' || JSON.stringify(cities_dict) !== '{}') {
+        h4.text(states + cities);
         h4.css({'text-overflow': 'ellipsis', 'white-space': 'nowrap'});
       } else {
         h4.html('&nbsp;');
